@@ -1,7 +1,7 @@
-// Returns the random Word
+
 function computerPlay() {
     var items = ['rock', 'paper', 'scissors'];
-    // Takes a random Word out of the "items" Array
+    // returns a random Word out of the "items" Array
     return items[~~(Math.random() * items.length)];
 }
 
@@ -15,7 +15,7 @@ function playRound(playerSelection, computerSelection) {
     var playerInput = prompt("Rock, Paper or Scissors?").toLowerCase();
 
     computerSelection = computerPlay().toLowerCase();
-    alert("The computer chose: " + computerSelection);
+    alert("The computer choose: " + computerSelection);
 
     if (playerInput === computerSelection) {
         alert("TIE!");
@@ -28,6 +28,8 @@ function playRound(playerSelection, computerSelection) {
     } else {
         alert("You Lose!");
     }
+    console.log("The Player choose: " + playerInput.toUpperCase());
+    console.log("The computer choose: " + computerSelection.toUpperCase());
 }
 
 game();
