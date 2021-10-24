@@ -1,23 +1,20 @@
 // Returns the random Word
 function computerPlay() {
+    var items = ['rock', 'paper', 'scissors'];
     // Takes a random Word out of the "items" Array
-    const items = ['rock', 'paper', 'scissors'];
-    const item = items[Math.floor(Math.random() * items.length)];
-    return item;
+    return items[~~(Math.random() * items.length)];
 }
 
 // Gets the input from both Players 
-const playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+const playerSelection = "";
 const computerSelection = computerPlay();
 
-// Stores the Player Input
-var playerInput = playerSelection;
+function playRound(playerSelection, computerSelection) {
 
+    // Stores the Player Input
+    var playerInput = prompt("Rock, Paper or Scissors?").toLowerCase();
 
-console.log(playRound(playerSelection, computerSelection));
-
-
-function playRound(playerInput, computerSelection) {
+    computerSelection = computerPlay().toLowerCase();
     alert("The computer chose: " + computerSelection);
 
     if (playerInput === computerSelection) {
@@ -36,9 +33,8 @@ function playRound(playerInput, computerSelection) {
 game();
 
 function game() {
-  for (let r = 0; r < 5; r++) {
-      console.log(r);
-      computerPlay(item);
-      playRound();
-  }
+    for (let r = 1; r < 6; r++) {
+        console.log(r);
+        playRound(playerSelection, computerSelection);
+    }
 }
